@@ -9,15 +9,15 @@
  */
 public class GameLogic {
     /**
-     * boolean boardHasWinner
+     * boardHasWinner
      * Static method that allows user to check if the board has a winner
      *
-     * @param board (Board) - board object to check
-     * @param	playerToken (char) - player to check if won
-     * @param winningNumber (int) - number in a row required to win
-     * @param row (int) - row position to check
-     * @param	col (int) - col position to check
-     * @return boolean - true if player has won, false otherwise
+     * @param board board object to check
+     * @param playerToken player to check if won
+     * @param winningNumber number of consecutive pieces required to win
+     * @param row row position to check
+     * @param col col position to check
+     * @return boolean true if player has won, false otherwise
      */
     public static boolean boardHasWinner(Board board, char playerToken, int winningNumber, int row, int col) {
         String antiDiagonal = board.getAntiDiagonal(row, col);
@@ -43,11 +43,11 @@ public class GameLogic {
     }
 
     /**
-     * boolean isDraw
+     * isDraw
      * Returns true if there are no more possible moves to make
      *
-     * @param board (Board) - Tic Tac Toe board to check
-     * @return boolean - true if game is a draw, false otherwise
+     * @param board Tic Tac Toe board to check
+     * @return boolean true if game is a draw, false otherwise
      */
     public static boolean isDraw(Board board) {
         return board.isFull();
