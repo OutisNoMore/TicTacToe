@@ -1,5 +1,3 @@
-import java.util.Scanner; // user input
-
 /**
  * UserInput class
  * Program class that calls all other dependencies. 
@@ -10,6 +8,8 @@ import java.util.Scanner; // user input
  * Class: CS 003B
  * Date: 10/26/2021
  */
+import java.util.Scanner; // user input
+
 public class UserInput {
     // Intro banner for aesthetic game experience
     private static final String introBanner = "----------------------------------------\n" +
@@ -21,10 +21,10 @@ public class UserInput {
                                             "----------------------------------------\n\n";
 
     /**
-     * void main
+     * main
      * Main function is in charge of user input and output
      *
-     * @param args (String[]) - any command=line parameters
+     * @param args command-line parameters
      */
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in); // scanner to get all user input
@@ -96,11 +96,11 @@ public class UserInput {
     }
 
     /**
-     * int getNumberOfPlayers
+     * getNumberOfPlayers
      * Prompts user for the number of players in the game
      *
-     * @param sc (Scanner) - input stream to get input from
-     * @return int - number of players
+     * @param sc input stream to get input from
+     * @return int number of players
      */
     private static int getNumberOfPlayers(Scanner sc) {
         int numberOfPlayers;
@@ -133,12 +133,12 @@ public class UserInput {
     }
 
     /**
-     * char[] getPlayerTokens
+     * getPlayerTokens
      * Gets the tokens of all players
      *
-     * @param sc (Scanner) - input stream to read from
-     * 				numberOfPlayers (int) - number of players
-     * @return - char[] - array of all player tokens
+     * @param sc input stream to read from
+     * @param numberOfPlayers number of players
+     * @return char array of all player tokens
      */
     private static char[] getPlayerTokens(Scanner sc, int numberOfPlayers) {
         sc.nextLine(); // clear input buffer
@@ -177,12 +177,12 @@ public class UserInput {
     }
 
     /**
-     * int getWinningNumber
+     * getWinningNumber
      * Gets the number required to win the game
      *
-     * @param sc (Scanner) - input stream to read from
-     * @param	numberOfPlayers (int) - number of players in game
-     * @return int - continuous number of tokens required to win
+     * @param sc input stream to read from
+     * @param numberOfPlayers number of players in game
+     * @return continuous number of tokens required to win
      */
     private static int getWinningNumber(Scanner sc, int numberOfPlayers) {
         int winningNumber;
@@ -213,13 +213,13 @@ public class UserInput {
     }
 
     /**
-     * int getBoardNumber 
+     * getBoardNumber 
      * Gets the row or column number to place a character's token
      *
-     * @param sc (Scanner) - input stream to read from
-     * @param position (String) - row or column
-     * @param numberOfPlayers (int) - number of players in game
-     * @return int - row or column number, -1 if bad input
+     * @param sc input stream to read from
+     * @param position row or column as a string
+     * @param numberOfPlayers number of players in game
+     * @return row or column number, -1 if bad input
      */
     private static int getBoardNumber(Scanner sc, String position, int numberOfPlayers) {
         int input = -1;
