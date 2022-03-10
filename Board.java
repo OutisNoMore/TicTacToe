@@ -18,12 +18,13 @@ public class Board {
 
     /**
      *	Board
-     *	Creates a new board object and initializes it as an empty board
-     *
-     *	@param numberOfPlayers(int) - determines board size
+     *	Creates a new board object based on the number of players
+     *  and initializes it as an empty board
+     *  
+     *	@param numberOfPlayers An integer of the number of players
      */
     public Board(int numberOfPlayers) {
-        boardSize = numberOfPlayers * 2 + 4;
+        boardSize = numberOfPlayers * 2 + 4; // Create a square board and pad for separators
         board = new String[boardSize][boardSize];
         spacesFilled = 0;
 
@@ -35,10 +36,10 @@ public class Board {
      ***********/
 
     /**
-     * void initializeBoard
+     * initializeBoard
      * creates an empty 2D board with given size
      *
-     * @param boardSize(int) - size of the board to initialize
+     * @param boardSize size of the board to initialize
      */
     private void initializeBoard(int boardSize) {
         board[0][0] = " "; // corner piece is always empty
@@ -79,12 +80,12 @@ public class Board {
     }
 
     /**
-     * void updateBord
+     * updateBord
      * Add a player move to the board if valid
      *
-     * @param playerToken (char) - player symbol
-     * @param	row (int) - player row 
-     * @param	col (int) - player column
+     * @param playerToken character player symbol
+     * @param row row of player move
+     * @param col column of player move
      */
     public void updateBoard(char playerToken, int row, int col) {
         if (validatePosition(row, col)) {
@@ -98,32 +99,32 @@ public class Board {
      *************/
 
     /**
-     * int getBoardSize
+     * getBoardSize
      * Returns the size of the board
      *
-     * @return int - size of the board
+     * @return int size of the board
      */
     public int getBoardSize() {
         return boardSize;
     }
 
     /**
-     * int isFull
+     * isFull
      * Returns if the board is full or not
      *
-     * @return boolean - true if board is full, false otherwise
+     * @return boolean true if board is full, false otherwise
      */
     public boolean isFull() {
         return spacesFilled == ((boardSize / 2) - 1) * ((boardSize / 2) - 1);
     }
 
     /**
-     * boolean validatePosition
+     * validatePosition
      * Checks if given row and column is a valid move
      *
-     * @param row (int) - given player row
-     * @param	col (int) - given player column
-     * @return boolean - true if position is valid
+     * @param row given player row
+     * @param col given player column
+     * @return boolean true if position is valid
      */
     public boolean validatePosition(int row, int col) {
         // check if another player has already made move
@@ -141,11 +142,11 @@ public class Board {
     }
 
     /**
-     * String getRow
+     * getRow
      * Returns the given row of the board as a string
      *
-     * @param row (int) - index of row to return
-     * @return String - row as a string
+     * @param row index of row to return
+     * @return String row as a string
      */
     public String getRow(int row) {
         String stringRow = "";
@@ -160,11 +161,11 @@ public class Board {
     }
 
     /**
-     * String getColumn
+     * getColumn
      * Returns the given column of the board as a string
      *
-     * @param col (int) - index of column to return
-     * @return String - col as string
+     * @param col index of column to return
+     * @return String col as string
      */
     public String getColumn(int col) {
         String column = "";
@@ -178,12 +179,12 @@ public class Board {
     }
 
     /**
-     * String getAntiDiagonal
+     * getAntiDiagonal
      * Returns the antidiagonal containing the given position as a string
      *
-     * @param row (int) - index of row position
-     * @param	col (int) - index of column position
-     * @return - String - anti diagonal as a string
+     * @param row index of row position
+     * @param col index of column position
+     * @return String anti diagonal as a string
      */
     public String getAntiDiagonal(int row, int col) {
         String antiDiagonal = "";
@@ -211,12 +212,12 @@ public class Board {
     }
 
     /**
-     * String getDiagonal
+     * getDiagonal
      * Returns the diagonal containing the given position as a string
      *
-     * @param row (int) - index of row position
-     * @param col (int) - index of column position
-     * @return - String - diagonal as a string
+     * @param row index of row position
+     * @param col index of column position
+     * @return String diagonal as a string
      */
     public String getDiagonals(int row, int col) {
         String diagonal = "";
@@ -245,32 +246,32 @@ public class Board {
     }
 
     /**
-     * String onlyTokens
+     * onlyTokens
      * Formats string so that no more separators or empty spaces are returned
      *
-     * @param str (String) - string to format
-     * @return String - formatted string
+     * @param str string to format
+     * @return String formatted string
      */
     private String onlyTokens(String str) {
         return str.replaceAll("[^a-zA-Z]", "");
     }
 
     /**
-     * int toIndex 
+     * toIndex 
      * Converts board position to board index
      *
-     * @param position (int) - row or column
-     * @return int - board index
+     * @param position row or column
+     * @return int board index
      */
     public static int toIndex(int position) {
         return 2 * position + 2;
     }
 
     /**
-     * String toString
+     * toString
      * Override toString function so that board gets printed
      *
-     * @return String - board as a string
+     * @return String board as a string
      */
     @Override
     public String toString() {
